@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+.mydiv{
+  background-color: #f0f0f0;
+  color:#0f0f0f;
+
+
+}
+
+.mydiv:hover{
+  background-color: #0f0f0f;
+  color:#f0f0f0;
+
+
+}
+
+.new-todo-input:focus {
+  border-color: #0f0f0f;
+  outline: none;
+}
+
+
+.todo-time {
+  color: gray;
+  font-style: italic;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.todo-name {
+  color: #4DE61A;
+  font-style: italic;
+  margin-bottom: 10px;
+  font-size: 8px;
+}
+
+.todo-body {
+  font-size: 20px;
+}

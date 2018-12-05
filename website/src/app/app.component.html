@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+<h2>List of Todo items</h2>
+<ul>
+  <li *ngFor="let todo of todos">
+    <h2 (click)="todoClicked(todo)">{{todo.name}}</h2>
+  </li>
+</ul>
+
+title <input type="text" [(ngModel)]="selectedTodo.name"><br>
+<button *ngIf="selectedTodo.id" (click)="updateTodo()">Put</button>
+<button *ngIf="!selectedTodo.id" (click)="createTodo()">Post</button>
+<button  *ngIf="selectedTodo.id" (click)="deleteTodo()">Delete</button>
+
+
+<router-outlet></router-outlet>

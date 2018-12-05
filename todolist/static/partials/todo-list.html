@@ -1,0 +1,59 @@
+<div class="row"><hr/></div>
+
+<div ng-controller="todoCtrl">
+<div class="row">
+    <div class="col-lg-12">
+      <div class="col-lg-6 well">
+      	<label class="col-lg-4  input-block-level">
+      		Search
+      	</label>
+        <input placeholder="Search Todo . . ." type="text" class=" col-lg-6 input-block-level"  ng-model="query">
+      </div>
+      <div class="col-lg-6 input-block-level well">
+        <label class="col-lg-4  input-block-level">
+          Items per page
+        </label>
+        <select ng-model="limit" class="col-lg-4  input-block-level">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+        </select>
+      </div>
+    </div>
+</div>
+	<div class="row">
+		<div class="col-lg-12 well">
+			<input placeholder="ToDo . . ." type="text" class="new-todo-input col-lg-12 input-block-level" id="new-todo" ng-model="text">
+			<div class="row"><hr/></div>
+			<button class="btn btn-primary pull-right" id="todo" ng-click="submitTodo(text)">Add</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+			<div>
+				<div class="mydiv well" ng-repeat="t in todos | filter:query |limitTo:limit">
+					<div class="todo-body"><a ui-sref="details({id: t.pk})">[[ t.text ]]</a></div>
+					<div class="todo-name"> [[ t.owner ]]</div>
+					<div class="todo-time"> [[ t.time | date:'medium' ]]</div>
+					<a  href="#"   ng-show="canDelete([[t.user]])" ng-click="removeTodo([[t.pk]])"><i class="glyphicon  glyphicon-remove"></i></a>
+					<a ng-show="canEdit([[t.user]])" ui-sref="update({id: t.pk})"><i class="glyphicon  glyphicon-edit"></i></a>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

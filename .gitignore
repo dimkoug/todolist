@@ -1,0 +1,9 @@
+env
+public
+node_modules
+bower_components
+settings_local.py
+__pycache__
+*.pyc
+debug.log
+*.sqlite3
