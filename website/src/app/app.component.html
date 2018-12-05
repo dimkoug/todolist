@@ -1,16 +1,29 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-<h2>List of Todo items</h2>
-<ul>
-  <li *ngFor="let todo of todos">
-    <h2 (click)="todoClicked(todo)">{{todo.name}}</h2>
-  </li>
-</ul>
+<div class="row">
+  <div class="col-12">
+      <h2 style="text-align:center;">List of Todo items</h2>
+  </div>
+</div>
 
-title <input type="text" [(ngModel)]="selectedTodo.name"><br>
-<button *ngIf="selectedTodo.id" (click)="updateTodo()">Put</button>
-<button *ngIf="!selectedTodo.id" (click)="createTodo()">Post</button>
-<button  *ngIf="selectedTodo.id" (click)="deleteTodo()">Delete</button>
+<div class="row">
+    <ul>
+        <li *ngFor="let todo of todos">
+          <h3 (click)="todoClicked(todo)">{{todo.name}}</h3>
+        </li>
+      </ul>
+</div>
+
+<div class="row">
+    <div class="form-group">
+        <label for="exampleInputEmail1">tiltle</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="selectedTodo.name" aria-describedby="emailHelp" placeholder="Enter todo">
+      </div>
+</div>
+
+
+<button class="btn btn-default" *ngIf="selectedTodo.id" (click)="updateTodo()">Update</button>
+<button class="btn btn-primary" *ngIf="!selectedTodo.id" (click)="createTodo()">Create</button>
+<button  class="btn btn-danger" *ngIf="selectedTodo.id" (click)="deleteTodo()">Delete</button>
 
 
 <router-outlet></router-outlet>
