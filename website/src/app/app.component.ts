@@ -10,13 +10,13 @@ import { getLocaleExtraDayPeriods } from '@angular/common';
   providers: [AppService]
 })
 export class AppComponent {
-  todos = [{name:'test'}];
+  todos = [{name: 'test'}];
   selectedTodo;
 
 
-  constructor(private app:AppService){
+  constructor(private app: AppService){
     this.getTodos();
-    this.selectedTodo = {name:''};
+    this.selectedTodo = {name: ''};
   }
 
   getTodos = () => {
@@ -30,7 +30,7 @@ export class AppComponent {
     );
   }
 
-  todoClicked = (todo) =>{
+  todoClicked = (todo) => {
     this.app.getTodo(todo.id).subscribe(
       data => {
         this.selectedTodo = data;
@@ -38,39 +38,42 @@ export class AppComponent {
       error => {
         console.log(error);
       }
-    )
+    );
     }
 
-    updateTodo = () =>{
+    updateTodo = () => {
       this.app.updateTodo(this.selectedTodo).subscribe(
         data => {
           this.getTodos();
+          this.selectedTodo = {name: ''};
         },
         error => {
           console.log(error);
         }
-      )
+      );
     }
 
-    createTodo = () =>{
+    createTodo = () => {
       this.app.createTodo(this.selectedTodo).subscribe(
         data => {
           this.todos.push(data);
+          this.selectedTodo = {name: ''};
         },
         error => {
           console.log(error);
         }
-      )
+      );
     }
-    deleteTodo = () =>{
+    deleteTodo = () => {
       this.app.deleteTodo(this.selectedTodo.id).subscribe(
         data => {
           this.getTodos();
+          this.selectedTodo = {name: ''};
         },
         error => {
           console.log(error);
         }
-      )
+      );
     }
 
 }
