@@ -1,18 +1,27 @@
-# To Do application
+# Todo application
+A basic todo application with django 2*  djangorestframework and angular 7
 
-To Do application based on Django 2  with Django REST Framework  and AngularJS 7
+Quick start
+-----------
 
+1. Clone repo  like this::
 
-create a virtualenv with python 3
+      git clone  https://github.com/dimkoug/todolist.git
 
-pip3 install -r requirements.txt
+2. Create a virtualenv::
 
-./manage.py makemigrations
+    python3 -m venv virtualenv
 
-./manage.py migrate
+3. Activate virtualenv
 
-./manage.py createsuperuser
+4. Install packages from requirements.txt file
 
-Inside the website folder is the angular 7  app
+5. Create settings_local.py with settings from settings_local_sample.py
 
-Still under development
+6. Run `python manage.py migrate`
+
+7. Start the development server and visit http://127.0.0.1:8000/
+
+8. Open another terminal window in folder website is the angular application
+
+9. run with ng serve
