@@ -1,5 +1,5 @@
 astroid==2.1.0
-Django==2.2.21
+Django==2.2.27
 django-cors-headers==2.4.0
 django-crispy-forms==1.7.2
 django-debug-toolbar==1.11.1
